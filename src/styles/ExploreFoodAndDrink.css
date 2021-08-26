@@ -1,0 +1,15 @@
+.explore-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-buttons button {
+  background-color: #704c13;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  margin: 15px auto;
+  padding: 10px;
+  text-align: center;
+  width: 90%;
+}

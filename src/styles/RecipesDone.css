@@ -1,0 +1,22 @@
+.recipes-done-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.buttons {
+  background-color: rgba(63, 60, 60, 0.2);
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  width: 100px;
+}
+
+.recipes-done {
+  background-color: rgba(63, 60, 60, 0.2);
+  display: flex;
+  margin: 5px;
+}

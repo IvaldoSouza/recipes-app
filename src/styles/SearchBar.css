@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+}
+
+.search-bar-nav {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 6px auto;
+  width: 100%;
+}
+
+.input-text-search-bar {
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.btn-search {
+  background-color: orangered;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.search-radio-div {
+  display: inline;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.search-radio-div label {
+  background-color: #704c13;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  margin-right: 6px;
+  padding: 5px;
+
+}
+
+.search-radio:hover {
+  background-color: chartreuse;
+  color: black;
+}
+
+[ type = 'radio' ] {
+  opacity: 0;
+}

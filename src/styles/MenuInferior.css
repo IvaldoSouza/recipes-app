@@ -1,0 +1,16 @@
+.menu-bottom {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.menu-bottom-imagens {
+  background-color: #d8c9b8;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 5px 10px;
+  position: fixed;
+  width: 100%;
+}

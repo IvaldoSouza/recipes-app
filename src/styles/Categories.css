@@ -1,0 +1,22 @@
+.categories-section {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 5px auto;
+  width: 95%;
+}
+
+.categories-section button {
+  background-color: #704c13;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.62em;
+  font-weight: 600;
+  margin: 5px 3px;
+  padding: 3px 0;
+  width: 31%;
+}
+
+.categories-section button:hover {
+  background-color: chartreuse;
+  color: black;
+}

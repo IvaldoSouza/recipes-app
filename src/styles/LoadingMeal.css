@@ -1,0 +1,12 @@
+.loading-meal {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.loading-meal img {
+  margin: 40% auto;
+  width: 40%;
+}

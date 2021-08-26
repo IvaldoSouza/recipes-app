@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.containerDetailsFood {
+  background-color: #e3caab;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.recipes-img {
+  border: #704c13 solid;
+  border-radius: 35px;
+  margin: 3px;
+  padding: 5px;
+}
+
+.recomend-container {
+  display: flex;
+  margin-bottom: 50px;
+  overflow-x: scroll;
+}
+
+.recomend-img {
+  border: #704c13 solid;
+  border-radius: 35px;
+  margin: 3px;
+  padding: 5px;
+  width: 150px;
+}
+
+.containerDetailsFood a {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.hiddenButton {
+  background-color: #198754;
+  border-radius: 6px;
+  bottom: 0;
+  color: white;
+  font-weight: 600;
+  height: 40px;
+  position: fixed;
+  width: 90%;
+}
+
+.hiddenButton-hidden {
+  bottom: 0;
+  position: fixed;
+  visibility: hidden;
+}
+
+.h2teste {
+  display: flex;
+}
+
+.buttons-share-favorite {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 150px;
+}
+
+.buttons-heart-favorite {
+  margin-left: 5px;
+}

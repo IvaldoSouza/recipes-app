@@ -1,0 +1,86 @@
+.login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.login a {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+.logo {
+  animation: shake 1s infinite ease;
+  display: flex;
+  margin-bottom: -90px;
+  max-height: 80vh;
+  width: 300px;
+}
+
+.button {
+  background-color: #704c13;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  width: 80%;
+}
+
+.button:disabled {
+  opacity: 50%;
+}
+
+input {
+  border-color: #704c13;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 10px;
+  position: relative;
+  width: 80%;
+}
+
+input::placeholder {
+  color: #704c13;
+}
+
+.meals > .logo {
+  animation: shake 1.5s infinite ease;
+  color: aliceblue;
+  font-family: Montserrat , sans-serif;
+  font-size: 3em;
+  font-weight: 900;
+}
+
+@keyframes shake {
+
+  0% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes clink {
+
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}

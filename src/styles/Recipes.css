@@ -1,0 +1,7 @@
+.recipes-section {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  margin-top: 120px;
+  width: 100%;
+}
