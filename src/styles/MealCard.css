@@ -1,9 +1,9 @@
 .meal-card {
-  background-color: #e2ddd8;
+  background-color: #ebebeb;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   margin: 5px;
   padding: 5px;
   text-align: center;

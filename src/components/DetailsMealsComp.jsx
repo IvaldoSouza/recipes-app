@@ -26,7 +26,7 @@ export default function DetailsMealsComp({ propsDrink }) {
   }
 
   return (
-    <div className="containerDetailsFood">
+    <div className="container-details-food">
       <img
         className="recipes-img"
         data-testid="recipe-photo"

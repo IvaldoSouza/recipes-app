@@ -4,11 +4,12 @@
   width: 100%;
 }
 
-.containerDetailsFood {
+.container-details-food {
   background-color: #e3caab;
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: 5px;
+  width: 100%;
 }
 
 .recipes-img {
@@ -34,11 +35,12 @@
 
 .containerDetailsFood a {
   display: flex;
-  flex-direction: column;
-  width: 90%;
+  flex-direction: row;
+  width: 100%;
 }
 
 .hiddenButton {
+  align-self: flex-start;
   background-color: #198754;
   border-radius: 6px;
   bottom: 0;
@@ -49,11 +51,11 @@
   width: 90%;
 }
 
-.hiddenButton-hidden {
+/* .hiddenButton-hidden {
   bottom: 0;
   position: fixed;
   visibility: hidden;
-}
+} */
 
 .h2teste {
   display: flex;

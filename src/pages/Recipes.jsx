@@ -11,6 +11,7 @@ export default function Recipes() {
     drinkRecipes,
     haveRecipes,
     isFilterByCategory,
+    changeHaveRecipes,
     saveDrinkRecipes,
     saveMealRecipes,
     saveCategories,
@@ -40,23 +41,23 @@ export default function Recipes() {
   ]);
 
   function getCategories() {
-    const path = location.pathname;
-    getCategoriesFromApi(path, saveCategories);
+    // const path = location.pathname;
+    getCategoriesFromApi(location.pathname, saveCategories);
   }
-  useEffect(getCategories, [location, saveCategories]);
+  useEffect(getCategories, [location]);
 
   function GetRecipesFirstAccess() {
-    if (haveRecipes === false) {
-      if (location.pathname === '/bebidas' && drinkRecipes.length === 0) {
-        getRecipes('', 's', location.pathname, saveDrinkRecipes);
-      } else if (location.pathname === '/comidas' && mealRecipes.length === 0) {
-        getRecipes('', 's', location.pathname, saveMealRecipes);
-      }
+    if (location.pathname === '/bebidas' && drinkRecipes.length === 0) {
+      changeHaveRecipes(false);
+      getRecipes('', 's', location.pathname, saveDrinkRecipes);
+    } else if (location.pathname === '/comidas' && mealRecipes.length === 0) {
+      changeHaveRecipes(false);
+      getRecipes('', 's', location.pathname, saveMealRecipes);
     }
   }
   useEffect(GetRecipesFirstAccess,
     [
-      location, saveDrinkRecipes, drinkRecipes, saveMealRecipes, mealRecipes, haveRecipes,
+      location, saveDrinkRecipes, drinkRecipes, saveMealRecipes, mealRecipes, haveRecipes, changeHaveRecipes,
     ]);
 
   return (

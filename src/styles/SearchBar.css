@@ -25,26 +25,35 @@ button {
 
 .btn-search {
   background-color: orangered;
-  border-radius: 10px;
+  border: none;
+  border-radius: 6px;
   color: white;
   font-weight: 600;
-  padding: 10px;
+  padding: 5px;
+  width: 93%;
 }
 
 .search-radio-div {
-  display: inline;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
   text-align: center;
+  width: 95%;
 }
 
 .search-radio-div label {
   background-color: #704c13;
   border-radius: 3px;
   color: white;
+  font-size: 0.8em;
   font-weight: 600;
   margin-right: 6px;
-  padding: 5px;
-
+  padding: 3px;
+  text-align: center;
+  width: 30%;
 }
 
 .search-radio:hover {
@@ -53,5 +62,5 @@ button {
 }
 
 [ type = 'radio' ] {
-  opacity: 0;
+  display: none;
 }

@@ -41,6 +41,18 @@ function Header() {
     isSearch,
   };
 
+  function classNameButtonSearch() {
+    if (
+      location.pathname === '/comidas'
+      || location.pathname === '/bebidas'
+      || location.pathname === '/explorar/area'
+      || location.pathname === '/explorar/comidas/area'
+    ) {
+      return 'visible';
+    }
+    return 'hidden';
+  }
+
   return (
     <header className="header-section-top">
       <div className="header-section">
@@ -52,14 +64,17 @@ function Header() {
           />
         </Link>
         <h3 data-testid="page-title">{ getPageTitle() }</h3>
-        { location.pathname === '/comidas'
+        {/* { location.pathname === '/comidas'
           && <ButtonSearchTop openSearchBar={ searchButtonElements } />}
         { location.pathname === '/bebidas'
           && <ButtonSearchTop openSearchBar={ searchButtonElements } />}
         { location.pathname === '/explorar/area'
           && <ButtonSearchTop openSearchBar={ searchButtonElements } />}
         { location.pathname === '/explorar/comidas/area'
-          && <ButtonSearchTop openSearchBar={ searchButtonElements } />}
+          && <ButtonSearchTop openSearchBar={ searchButtonElements } />} */}
+        <nav className={ classNameButtonSearch() }>
+          <ButtonSearchTop openSearchBar={ searchButtonElements } />
+        </nav>
       </div>
       { isSearch && <SearchBar /> }
       { location.pathname === '/comidas' && <Categories /> }
