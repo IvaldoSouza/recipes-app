@@ -5,11 +5,43 @@
 }
 
 .container-details-food {
-  background-color: #e3caab;
   display: flex;
   flex-direction: column;
-  padding: 5px;
   width: 100%;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.buttons-favorites-section {
+  display: inline;
+  margin: 10px 0;
+  text-align: end;
+}
+
+.buttons-share-favorite {
+  width: 20%;
+}
+
+.buttons-heart-favorite {
+  width: 20%;
+}
+
+.ingredients-section {
+  padding: 5px;
+}
+
+.ingredients-section h4 {
+  margin: 5px 0;
+}
+
+.instrucitons-section {
+  background-color: #e2ddd8;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
 }
 
 .recipes-img {
@@ -39,7 +71,25 @@
   width: 100%;
 }
 
-.hiddenButton {
+.recomendation-card {
+  background-color: #e2ddd8;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.recomendation-card h4 {
+  text-align: center;
+}
+
+.button-progress-section {
+  background-color: #198754;
+  display: inline;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.button-progress-section button {
   align-self: flex-start;
   background-color: #198754;
   border-radius: 6px;
@@ -48,25 +98,4 @@
   font-weight: 600;
   height: 40px;
   position: fixed;
-  width: 90%;
-}
-
-/* .hiddenButton-hidden {
-  bottom: 0;
-  position: fixed;
-  visibility: hidden;
-} */
-
-.h2teste {
-  display: flex;
-}
-
-.buttons-share-favorite {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 150px;
-}
-
-.buttons-heart-favorite {
-  margin-left: 5px;
 }
