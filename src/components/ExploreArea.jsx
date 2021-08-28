@@ -3,13 +3,14 @@ import ExploreAreaCards from './ExploreAreaCards';
 import RecipesAppContext from '../context/RecipesAppContext';
 import getRecipes from '../services/API';
 import '../styles/ExploreArea.css';
+import LoadingMeal from './LoadingMeal';
 
 export default function ExploreArea() {
-  const { saveMealRecipes } = useContext(RecipesAppContext);
+  const { saveMealRecipes, changeHaveRecipes, haveRecipes } = useContext(RecipesAppContext);
 
   const [arrayArea, setArrayArea] = useState([]);
   const [areaSelected, setAreaSelected] = useState('All');
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
@@ -50,23 +51,23 @@ export default function ExploreArea() {
   }
 
   function getRecipesByArea() {
-    setIsLoading(true);
     if (areaSelected === 'All') {
+      changeHaveRecipes(false);
       getRecipes('', 's', '/comidas', saveMealRecipes);
-      setIsLoading(false);
     } else {
+      changeHaveRecipes(false);
       fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${areaSelected}`)
         .then((response) => response.json())
-        .then((data) => saveMealRecipes(data) || setIsLoading(false));
+        .then((data) => saveMealRecipes(data));
     }
   }
-  useEffect(getRecipesByArea, [areaSelected, saveMealRecipes, setIsLoading]);
+  useEffect(getRecipesByArea, [areaSelected]);
 
   return (
     <div className="explore-area-section">
       { renderDropdownArea() }
-      { isLoading
-        ? <h3>Loading...</h3>
+      { !haveRecipes
+        ? <LoadingMeal />
         : <ExploreAreaCards /> }
     </div>
   );
