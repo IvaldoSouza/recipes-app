@@ -61,6 +61,6 @@ button {
   color: black;
 }
 
-[ type = 'radio' ] {
+[ type = 'checkbox' ] {
   display: none;
 }

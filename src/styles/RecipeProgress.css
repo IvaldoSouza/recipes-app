@@ -1,0 +1,73 @@
+.risk {
+  text-decoration: line-through;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 90%;
+}
+
+.buttons-favorites-section-progress {
+  display: inline;
+  margin: 10px 0;
+  text-align: end;
+}
+
+.buttons-share-favorite-progress {
+  width: 20%;
+}
+
+.buttons-heart-favorite-progress {
+  width: 20%;
+}
+
+.ingredients-section-progress {
+  align-content: flex-start;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 5px;
+}
+
+.ingredients-item {
+  display: inline;
+}
+
+/* .ingredients-item label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+} */
+
+.instructions-section-progress {
+  background-color: #e2ddd8;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
+}
+
+.instructions-section-progress p {
+  text-align: justify;
+}
+
+.button-progress-section-progress button {
+  background-color: #198754;
+  border-radius: 6px;
+  bottom: 0;
+  color: white;
+  font-weight: 600;
+  height: 40px;
+  position: fixed;
+  width: 90%;
+}
+
+.button-progress-section-progress button:disabled {
+  background-color: silver;
+}
+
+[ type = 'radio' ] {
+  display: none;
+}

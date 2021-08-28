@@ -134,7 +134,7 @@ export default function DetailsDrink() {
   };
 
   return (
-    <div className="container">
+    <div className="recipe-container">
       <DetailsDrinkComp propsDrink={ propsDrink } />
     </div>
   );

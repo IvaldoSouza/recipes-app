@@ -34,10 +34,10 @@ export default function DetailsMealsComp({ propsDrink }) {
         src={ recipesDetails.strMealThumb }
       />
       <div data-testid="recipe-title" className="title-section">
-        <div className="buttons-favorites-section">
+        <div className="buttons-favorites-section-details">
           <button
             data-testid="share-btn"
-            className="buttons-share-favorite"
+            className="buttons-share-favorite-details"
             type="button"
             onClick={ handleClickCopy }
           >
@@ -45,7 +45,7 @@ export default function DetailsMealsComp({ propsDrink }) {
           </button>
           <button
             type="button"
-            className="buttons-heart-favorite"
+            className="buttons-heart-favorite-details"
             onClick={ handleClickFavorites }
           >
             <img
@@ -59,13 +59,13 @@ export default function DetailsMealsComp({ propsDrink }) {
       </div>
       <p>{ copyText }</p>
       <p data-testid="recipe-category">{ recipesDetails.strCategory }</p>
-      <div className="ingredients-section">
+      <div className="ingredients-section-details">
         <h4>Ingredients</h4>
-        <div className="ingredient-list-section">
+        <div className="ingredient-list-section-details">
           {getIngredients(recipesDetails)}
         </div>
       </div>
-      <div className="instrucitons-section">
+      <div className="instrucitons-section-details">
         <h4>Instructions</h4>
         <p data-testid="instructions">{ recipesDetails.strInstructions }</p>
       </div>
@@ -77,7 +77,7 @@ export default function DetailsMealsComp({ propsDrink }) {
         frameBorder="0"
       />
       <div>
-        <h4>Recomendadas</h4>
+        <h4 className="title-recomend">Recomendadas</h4>
         <section className="recomend-container">
           {
             recipesRecommendation && recipesRecommendation.length && recipesRecommendation
@@ -95,7 +95,6 @@ export default function DetailsMealsComp({ propsDrink }) {
                     {drinks.strDrink}
                   </h4>
                   <Link
-                    // onClick={ () => setDrinkRecipeId(drinks.idDrink) }
                     to={ `/bebidas/${drinks.idDrink}` }
                   >
                     <img
@@ -110,7 +109,7 @@ export default function DetailsMealsComp({ propsDrink }) {
           }
         </section>
       </div>
-      <div className="button-progress-section">
+      <div className="button-progress-section-details">
         <button
           className={ buttonHiddenClass }
           type="button"

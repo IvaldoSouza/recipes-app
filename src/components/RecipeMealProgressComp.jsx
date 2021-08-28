@@ -80,18 +80,16 @@ export default function RecipeMealProgressComp({ propsMealProgress }) {
   };
 
   return (
-    <div>
-      <div>
-        <h2 data-testid="recipe-title">{recipeProgress.strMeal}</h2>
-        <p>{ copyText }</p>
-        <img
-          src={ recipeProgress.strMealThumb }
-          data-testid="recipe-photo"
-          className="recipes-img"
-          alt={ recipeProgress.strMeal }
-          width="100px"
-        />
+    <div className="progress-section">
+      <img
+        src={ recipeProgress.strMealThumb }
+        data-testid="recipe-photo"
+        className="recipes-img"
+        alt={ recipeProgress.strMeal }
+      />
+      <div className="buttons-favorites-section-progress">
         <button
+          className="buttons-share-favorite-progress"
           data-testid="share-btn"
           type="button"
           onClick={ handleClickCopy }
@@ -99,6 +97,7 @@ export default function RecipeMealProgressComp({ propsMealProgress }) {
           <img src={ shareIcon } alt="share icon" />
         </button>
         <button
+          className="buttons-share-favorite-progress"
           type="button"
           onClick={ handleFavoriteClick }
         >
@@ -108,26 +107,36 @@ export default function RecipeMealProgressComp({ propsMealProgress }) {
             alt="favorite icon"
           />
         </button>
-        <p data-testid="recipe-category">{recipeProgress.strCategory}</p>
+      </div>
+      <h2 data-testid="recipe-title">{recipeProgress.strMeal}</h2>
+      <p>{ copyText }</p>
+      <p data-testid="recipe-category">{recipeProgress.strCategory}</p>
+      <div className="ingredients-section-progress">
         <h3>Ingredients</h3>
         {checkBox.map((itens, key) => (
-          <label
-            htmlFor={ key }
-            data-testid={ `${key}-ingredient-step` }
-            className={ ingredientChecked.includes(itens) ? 'risk' : 'norisk' }
-            key={ key }
-          >
-            <input
-              type="checkbox"
-              checked={ ingredientChecked.includes(itens) }
-              value={ itens }
-              id={ key }
-              onClick={ (e) => handleChangeCheck(e) }
-            />
-            {itens}
-          </label>))}
-
+          <div key={ key } className="ingredients-item">
+            <label
+              htmlFor={ itens }
+              data-testid={ `${key}-ingredient-step` }
+              className={ ingredientChecked.includes(itens) ? 'risk item' : 'norisk item' }
+            >
+              <input
+                type="checkbox"
+                checked={ ingredientChecked.includes(itens) }
+                value={ itens }
+                id={ itens }
+                onClick={ (e) => handleChangeCheck(e) }
+              />
+              {itens}
+            </label>
+          </div>
+        ))}
+      </div>
+      <div className="instructions-section-progress">
+        <h4>Instructions</h4>
         <p data-testid="instructions">{recipeProgress.strInstructions}</p>
+      </div>
+      <div className="button-progress-section-progress">
         <button
           disabled={ checkBox.length !== ingredientChecked.length }
           type="button"

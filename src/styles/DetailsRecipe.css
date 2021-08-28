@@ -1,13 +1,10 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .container-details-food {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 90%;
 }
 
 .title-section {
@@ -16,29 +13,29 @@
   width: 100%;
 }
 
-.buttons-favorites-section {
+.buttons-favorites-section-details {
   display: inline;
   margin: 10px 0;
   text-align: end;
 }
 
-.buttons-share-favorite {
+.buttons-share-favorite-details {
   width: 20%;
 }
 
-.buttons-heart-favorite {
+.buttons-heart-favorite-details {
   width: 20%;
 }
 
-.ingredients-section {
+.ingredients-section-details {
   padding: 5px;
 }
 
-.ingredients-section h4 {
+.ingredients-section-details h4 {
   margin: 5px 0;
 }
 
-.instrucitons-section {
+.instrucitons-section-details {
   background-color: #e2ddd8;
   border-radius: 5px 5px 0 0;
   padding: 5px;
@@ -71,26 +68,28 @@
   width: 100%;
 }
 
+.title-recomend {
+  margin-top: 10px;
+}
+
 .recomendation-card {
   background-color: #e2ddd8;
-  border-radius: 5px;
-  margin-right: 5px;
-  padding: 5px;
+  border-radius: 10px;
+  margin-right: 4px;
+  padding: 3px;
 }
 
 .recomendation-card h4 {
   text-align: center;
 }
 
-.button-progress-section {
-  background-color: #198754;
-  display: inline;
-  margin: 0 auto;
+.button-progress-section-details {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
 
-.button-progress-section button {
-  align-self: flex-start;
+.button-progress-section-details button {
   background-color: #198754;
   border-radius: 6px;
   bottom: 0;
@@ -98,4 +97,5 @@
   font-weight: 600;
   height: 40px;
   position: fixed;
+  width: 90%;
 }
