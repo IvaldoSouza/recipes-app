@@ -26,18 +26,18 @@ export default function DetailsMealsComp({ propsDrink }) {
   }
 
   return (
-    <div className="containerDetailsFood">
+    <div className="container-details-food">
       <img
         className="recipes-img"
         data-testid="recipe-photo"
         alt="recipes-food"
         src={ recipesDetails.strMealThumb }
       />
-      <div data-testid="recipe-title" className="h2teste">
-        <h2>{ recipesDetails.strMeal }</h2>
-        <div className="buttons-share-favorite">
+      <div data-testid="recipe-title" className="title-section">
+        <div className="buttons-favorites-section-details">
           <button
             data-testid="share-btn"
+            className="buttons-share-favorite-details"
             type="button"
             onClick={ handleClickCopy }
           >
@@ -45,7 +45,7 @@ export default function DetailsMealsComp({ propsDrink }) {
           </button>
           <button
             type="button"
-            className="buttons-heart-favorite"
+            className="buttons-heart-favorite-details"
             onClick={ handleClickFavorites }
           >
             <img
@@ -55,16 +55,20 @@ export default function DetailsMealsComp({ propsDrink }) {
             />
           </button>
         </div>
+        <h2>{ recipesDetails.strMeal }</h2>
       </div>
       <p>{ copyText }</p>
       <p data-testid="recipe-category">{ recipesDetails.strCategory }</p>
-
-      <h4>Ingredients</h4>
-      <div>
-        {getIngredients(recipesDetails)}
+      <div className="ingredients-section-details">
+        <h4>Ingredients</h4>
+        <div className="ingredient-list-section-details">
+          {getIngredients(recipesDetails)}
+        </div>
       </div>
-      <h4>Instructions</h4>
-      <p data-testid="instructions">{ recipesDetails.strInstructions }</p>
+      <div className="instrucitons-section-details">
+        <h4>Instructions</h4>
+        <p data-testid="instructions">{ recipesDetails.strInstructions }</p>
+      </div>
       <iframe
         title={ recipesDetails.strMeal }
         className="video"
@@ -73,46 +77,48 @@ export default function DetailsMealsComp({ propsDrink }) {
         frameBorder="0"
       />
       <div>
-        <h4>Recomendadas</h4>
+        <h4 className="title-recomend">Recomendadas</h4>
+        <section className="recomend-container">
+          {
+            recipesRecommendation && recipesRecommendation.length && recipesRecommendation
+              .filter((_, indexFilter) => indexFilter < '6')
+              .map((drinks, index) => (
+                <div
+                  className="recomendation-card"
+                  data-testid={ `${index}-recomendation-card` }
+                  key={ index }
+                >
+                  <p>{drinks.strAlcoholic}</p>
+                  <h4
+                    data-testid={ `${index}-recomendation-title` }
+                  >
+                    {drinks.strDrink}
+                  </h4>
+                  <Link
+                    to={ `/bebidas/${drinks.idDrink}` }
+                  >
+                    <img
+                      className="recomend-img"
+                      data-testid={ `${index}-card-img` }
+                      src={ drinks.strDrinkThumb }
+                      alt={ drinks.strDrink }
+                    />
+                  </Link>
+                </div>
+              ))
+          }
+        </section>
       </div>
-      <section className="recomend-container">
-        {
-          recipesRecommendation && recipesRecommendation.length && recipesRecommendation
-            .filter((_, indexFilter) => indexFilter < '6')
-            .map((drinks, index) => (
-              <div
-                data-testid={ `${index}-recomendation-card` }
-                key={ index }
-              >
-                <p>{drinks.strAlcoholic}</p>
-                <h4
-                  data-testid={ `${index}-recomendation-title` }
-                >
-                  {drinks.strDrink}
-                </h4>
-                <Link
-                  // onClick={ () => setDrinkRecipeId(drinks.idDrink) }
-                  to={ `/bebidas/${drinks.idDrink}` }
-                >
-                  <img
-                    className="recomend-img"
-                    data-testid={ `${index}-card-img` }
-                    src={ drinks.strDrinkThumb }
-                    alt={ drinks.strDrink }
-                  />
-                </Link>
-              </div>
-            ))
-        }
-      </section>
-      <button
-        className={ buttonHiddenClass }
-        type="button"
-        data-testid="start-recipe-btn"
-        onClick={ () => handleClickRecipesProgress() }
-      >
-        { inProgress ? 'Continuar Receita' : 'Iniciar Receita' }
-      </button>
+      <div className="button-progress-section-details">
+        <button
+          className={ buttonHiddenClass }
+          type="button"
+          data-testid="start-recipe-btn"
+          onClick={ () => handleClickRecipesProgress() }
+        >
+          { inProgress ? 'Continuar Receita' : 'Iniciar Receita' }
+        </button>
+      </div>
     </div>
   );
 }

@@ -47,7 +47,6 @@ export default function SearchBar() {
 
   return (
     <section className="recipes-filter-section">
-
       <nav className="search-bar-nav">
         <input
           className="input-text-search-bar"
@@ -81,7 +80,7 @@ export default function SearchBar() {
             />
           </label>
           <label className="search-radio" htmlFor="first-letter-search-radio">
-            Primeira letra
+            1° letra
             <input
               type="radio"
               name="search-radio"

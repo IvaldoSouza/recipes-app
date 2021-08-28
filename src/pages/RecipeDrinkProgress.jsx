@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import '../styles/RecipeMealProgress.css';
+import '../styles/RecipeProgress.css';
 import RecipeDrinkProgressComp from '../components/RecipeDrinkProgressComp';
 import LoadingDrink from '../components/LoadingDrink';
 

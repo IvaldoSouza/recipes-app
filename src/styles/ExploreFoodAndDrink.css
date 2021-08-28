@@ -1,6 +1,7 @@
 .explore-buttons {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .explore-buttons button {

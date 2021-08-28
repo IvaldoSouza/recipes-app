@@ -5,8 +5,8 @@ import '../styles/Login.css';
 import restaurante from '../images/restaurante.png';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('teste@algo.com');
+  const [password, setPassword] = useState('1234576');
 
   const handleChangeEmail = ({ target: { value } }) => {
     const checkEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,6 +36,7 @@ export default function Login() {
       <input
         className="input-login"
         type="text"
+        value={ email }
         placeholder="Digite seu e-mail"
         data-testid="email-input"
         onChange={ handleChangeEmail }
@@ -43,6 +44,7 @@ export default function Login() {
       <input
         className="input-login"
         type="password"
+        value={ password }
         placeholder="Digite sua senha"
         data-testid="password-input"
         onChange={ handleChangePassword }

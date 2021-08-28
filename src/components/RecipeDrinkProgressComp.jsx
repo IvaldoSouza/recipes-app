@@ -80,61 +80,70 @@ export default function RecipeDrinkProgressComp({ propsDrinkProgress }) {
 
   return (
     <div>
-      <div>
-        <h2 data-testid="recipe-title">{recipeProgress.strDrink}</h2>
-        <p>{ copyText }</p>
+      <div className="progress-section">
         <img
           src={ recipeProgress.strDrinkThumb }
           data-testid="recipe-photo"
           className="recipes-img"
           alt={ recipeProgress.strDrink }
-          width="100px"
         />
-        <button
-          data-testid="share-btn"
-          type="button"
-          onClick={ handleClickCopy }
-        >
-          <img src={ shareIcon } alt="share icon" />
-        </button>
-        <button
-          type="button"
-          onClick={ handleFavoriteClick }
-        >
-          <img
-            src={ favorited ? blackHeartIcon : whiteHeartIcon }
-            alt="favorite icon"
-            data-testid="favorite-btn"
-          />
-        </button>
-        <p data-testid="recipe-category">{recipeProgress.strCategory}</p>
-        <h3>Ingredients</h3>
-        {checkBox.map((itens, key) => (
-          <label
-            htmlFor={ key }
-            data-testid={ `${key}-ingredient-step` }
-            className={ ingredientChecked.includes(itens) ? 'risk' : 'norisk' }
-            key={ key }
+        <div className="buttons-favorites-section-progress">
+          <button
+            className="buttons-share-favorite-progress"
+            data-testid="share-btn"
+            type="button"
+            onClick={ handleClickCopy }
           >
-            <input
-              type="checkbox"
-              checked={ ingredientChecked.includes(itens) }
-              value={ itens }
-              id={ key }
-              onClick={ (e) => handleChangeCheck(e) }
+            <img src={ shareIcon } alt="share icon" />
+          </button>
+          <button
+            className="buttons-share-favorite-progress"
+            type="button"
+            onClick={ handleFavoriteClick }
+          >
+            <img
+              src={ favorited ? blackHeartIcon : whiteHeartIcon }
+              alt="favorite icon"
+              data-testid="favorite-btn"
             />
-            {itens}
-          </label>))}
-
-        <p data-testid="instructions">{recipeProgress.strInstructions}</p>
-        <button
-          disabled={ checkBox.length !== ingredientChecked.length }
-          type="button"
-          data-testid="finish-recipe-btn"
-          onClick={ () => addRecipeDone() }
-        >
-          Finalizar Receita
-        </button>
+          </button>
+        </div>
+        <h2 data-testid="recipe-title">{recipeProgress.strDrink}</h2>
+        <p>{ copyText }</p>
+        <p data-testid="recipe-category">{recipeProgress.strCategory}</p>
+        <div className="ingredients-section-progress">
+          <h3>Ingredients</h3>
+          {checkBox.map((itens, key) => (
+            <label
+              htmlFor={ key }
+              data-testid={ `${key}-ingredient-step` }
+              className={ ingredientChecked.includes(itens) ? 'risk' : 'norisk' }
+              key={ key }
+            >
+              <input
+                type="checkbox"
+                checked={ ingredientChecked.includes(itens) }
+                value={ itens }
+                id={ key }
+                onClick={ (e) => handleChangeCheck(e) }
+              />
+              {itens}
+            </label>))}
+        </div>
+        <div className="instructions-section-progress">
+          <h4>Instructions</h4>
+          <p data-testid="instructions">{recipeProgress.strInstructions}</p>
+        </div>
+        <div className="button-progress-section-progress">
+          <button
+            disabled={ checkBox.length !== ingredientChecked.length }
+            type="button"
+            data-testid="finish-recipe-btn"
+            onClick={ () => addRecipeDone() }
+          >
+            Finalizar Receita
+          </button>
+        </div>
       </div>
     </div>
   );

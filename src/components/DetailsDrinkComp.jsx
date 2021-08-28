@@ -20,18 +20,18 @@ export default function DetailsDrinkComp({ propsDrink }) {
   } = propsDrink;
 
   return (
-    <div className="containerDetailsFood">
+    <div className="container-details-food">
       <img
         className="recipes-img"
         data-testid="recipe-photo"
         alt="recipes-food"
         src={ recipesDetails.strDrinkThumb }
       />
-      <div data-testid="recipe-title" className="h2teste">
-        <h2>{ recipesDetails.strDrink }</h2>
-        <div className="buttons-share-favorite">
+      <div data-testid="recipe-title" className="title-section">
+        <div className="buttons-favorites-section-details">
           <button
             data-testid="share-btn"
+            className="buttons-share-favorite"
             type="button"
             onClick={ handleClickCopy }
           >
@@ -43,24 +43,28 @@ export default function DetailsDrinkComp({ propsDrink }) {
             onClick={ handleClickFavorites }
           >
             <img
-              data-testid="favorite-btn"
               src={ favorite ? blackHeartIcon : whiteHeartIcon }
+              data-testid="favorite-btn"
               alt="favorite"
             />
           </button>
         </div>
+        <h2>{ recipesDetails.strDrink }</h2>
       </div>
       <p>{copyText}</p>
       <p data-testid="recipe-category">{ recipesDetails.strAlcoholic }</p>
-
-      <h4>Ingredients</h4>
-      <div>
-        { getIngredients(recipesDetails) }
+      <div className="ingredients-section-details">
+        <h4>Ingredients</h4>
+        <div>
+          { getIngredients(recipesDetails) }
+        </div>
       </div>
-      <h4>Instructions</h4>
-      <p data-testid="instructions">{ recipesDetails.strInstructions }</p>
+      <div className="instrucitons-section-details">
+        <h4>Instructions</h4>
+        <p data-testid="instructions">{ recipesDetails.strInstructions }</p>
+      </div>
       <div>
-        <h4>Recomendadas</h4>
+        <h4 className="title-recomend">Recomendadas</h4>
       </div>
       <section className="recomend-container">
         {
@@ -68,9 +72,9 @@ export default function DetailsDrinkComp({ propsDrink }) {
             .filter((_, indexFilter) => indexFilter < '6')
             .map((meals, index) => (
               <div
+                className="recomendation-card"
                 data-testid={ `${index}-recomendation-card` }
                 key={ index }
-                className=""
               >
                 <h4
                   data-testid={ `${index}-recomendation-title` }
@@ -92,14 +96,16 @@ export default function DetailsDrinkComp({ propsDrink }) {
             ))
         }
       </section>
-      <button
-        className={ buttonHiddenClass }
-        type="button"
-        data-testid="start-recipe-btn"
-        onClick={ () => handleClickRecipesProgress() }
-      >
-        { inProgress ? 'Continuar Receita' : 'Iniciar Receita' }
-      </button>
+      <div className="button-progress-section-details">
+        <button
+          className={ buttonHiddenClass }
+          type="button"
+          data-testid="start-recipe-btn"
+          onClick={ () => handleClickRecipesProgress() }
+        >
+          { inProgress ? 'Continuar Receita' : 'Iniciar Receita' }
+        </button>
+      </div>
     </div>
   );
 }

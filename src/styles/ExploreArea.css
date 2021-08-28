@@ -4,3 +4,11 @@
   margin: 0 auto;
   width: 90%;
 }
+
+.explore-section select {
+  background-color: transparent;
+  border-color: #704c13;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 10px;
+}

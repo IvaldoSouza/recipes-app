@@ -1,14 +1,44 @@
-.container {
+.container-details-food {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 90%;
+}
+
+.title-section {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.containerDetailsFood {
-  background-color: #e3caab;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
+.buttons-favorites-section-details {
+  display: inline;
+  margin: 10px 0;
+  text-align: end;
+}
+
+.buttons-share-favorite-details {
+  width: 20%;
+}
+
+.buttons-heart-favorite-details {
+  width: 20%;
+}
+
+.ingredients-section-details {
+  padding: 5px;
+}
+
+.ingredients-section-details h4 {
+  margin: 5px 0;
+}
+
+.instrucitons-section-details {
+  background-color: #e2ddd8;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
 }
 
 .recipes-img {
@@ -34,11 +64,32 @@
 
 .containerDetailsFood a {
   display: flex;
-  flex-direction: column;
-  width: 90%;
+  flex-direction: row;
+  width: 100%;
 }
 
-.hiddenButton {
+.title-recomend {
+  margin-top: 10px;
+}
+
+.recomendation-card {
+  background-color: #e2ddd8;
+  border-radius: 10px;
+  margin-right: 4px;
+  padding: 3px;
+}
+
+.recomendation-card h4 {
+  text-align: center;
+}
+
+.button-progress-section-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.button-progress-section-details button {
   background-color: #198754;
   border-radius: 6px;
   bottom: 0;
@@ -50,21 +101,5 @@
 }
 
 .hiddenButton-hidden {
-  bottom: 0;
-  position: fixed;
   visibility: hidden;
-}
-
-.h2teste {
-  display: flex;
-}
-
-.buttons-share-favorite {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 150px;
-}
-
-.buttons-heart-favorite {
-  margin-left: 5px;
 }

@@ -1,5 +1,7 @@
 .explore-section {
-  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 .explore-section h2 {
