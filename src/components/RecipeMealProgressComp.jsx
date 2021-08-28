@@ -121,13 +121,14 @@ export default function RecipeMealProgressComp({ propsMealProgress }) {
               className={ ingredientChecked.includes(itens) ? 'risk item' : 'norisk item' }
             >
               <input
+                className="checkbox"
                 type="checkbox"
                 checked={ ingredientChecked.includes(itens) }
                 value={ itens }
                 id={ itens }
                 onClick={ (e) => handleChangeCheck(e) }
               />
-              {itens}
+              <span>{itens}</span>
             </label>
           </div>
         ))}

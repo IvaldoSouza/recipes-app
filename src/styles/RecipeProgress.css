@@ -37,12 +37,6 @@
   display: inline;
 }
 
-/* .ingredients-item label {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-} */
-
 .instructions-section-progress {
   background-color: #e2ddd8;
   border-radius: 5px 5px 0 0;
@@ -66,8 +60,4 @@
 
 .button-progress-section-progress button:disabled {
   background-color: silver;
-}
-
-[ type = 'radio' ] {
-  display: none;
 }
