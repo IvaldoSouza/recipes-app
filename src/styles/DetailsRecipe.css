@@ -99,3 +99,7 @@
   position: fixed;
   width: 90%;
 }
+
+.hiddenButton-hidden {
+  visibility: hidden;
+}
