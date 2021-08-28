@@ -2,6 +2,7 @@
   "name": "recipes-app-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://FelipeBuso.github.io/recipes-app",
   "dependencies": {
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "@testing-library/jest-dom": "^4.2.4",
@@ -31,6 +32,8 @@
     "test": "react-scripts test",
     "test-coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx"
   },
   "eslintConfig": {

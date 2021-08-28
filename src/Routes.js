@@ -15,7 +15,7 @@ import RecipeDrinkProgress from './pages/RecipeDrinkProgress';
 export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={ Login } />
+      <Route exact path="/recipes-app" component={ Login } />
       <Route exact path="/comidas" component={ Recipes } />
       <Route exact path="/Bebidas" component={ Recipes } />
       <Route exact path="/comidas/:id" component={ DetailsMeals } />
